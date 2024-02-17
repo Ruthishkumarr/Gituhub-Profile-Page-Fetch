@@ -21,19 +21,18 @@ getDetailsButton.addEventListener("click", async () => {
 //! get Profile Function is used to get user details in server
 
 function getProfile(data) {
-  console.log(data);
+  // console.log(data);
   profileInfo.innerHTML = `<div class="card">
   <div class="card-img">
   <img src =${data.avatar_url} src=${data.name}>
   </div>
   <div class="card-body">
-  <div class=card-title><i class="fa-solid fa-user"></i> ${data.name}</div>
-  <div class="card-subHeading">${data.login}</div>
-  <div class="card-text">
+  <h2><i class="fa-solid fa-user"></i> ${data.name}</h2>
+  <h5 class="login">${data.login}</h5>
   <p class="bio">${data.bio}</p>
-  <p class="location">${data.location}</p>
-  <button><a href =${data.html_url} target="_blank">Click Me</a></button>
-  </div></div></div>
+  <h5 class="location">${data.location}</h5>
+  <button class="b"><a href =${data.html_url} target="_blank">Click Me</a></button>
+  </div></div>
   `;
 }
 
@@ -46,12 +45,12 @@ async function getRepo(userName) {
   for (i = 0; i < project.length; i++) {
     repoInfo.innerHTML += `<div class="card">
     <div class="card-body">
-    <div class=card-title><i class="fa-solid fa-user"></i> ${project[i].name}</div>
-  <div class="card-subHeading">${project[i].language}</div>
+    <h3><i class="fa-solid fa-user"></i> ${project[i].name}</h3>
+  <h5>${project[i].language}</h5>
   <div class="card-text">
-  <button><a href =${project[i].html_url} target="_blank">Visit Projects</a></button>
-  </div></div></div>
-
-    `;
+  <button class="ba"><a href =${project[i].html_url} target="_blank">Visit Projects</a></button>
+  </div>
+  </div>
+  </div>`;
   }
 }
